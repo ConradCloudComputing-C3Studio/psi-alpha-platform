@@ -1,0 +1,221 @@
+{
+  "navigation": {
+    "about": "Acerca de",
+    "membership": "Membresía",
+    "chapters": "Capítulos",
+    "resources": "Recursos",
+    "events": "Eventos",
+    "signIn": "Iniciar Sesión",
+    "joinNow": "Únete Ahora"
+  },
+  "homepage": {
+    "title": "Psi Alpha",
+    "subtitle": "La Sociedad Internacional de Honor en Psicología",
+    "description": "Reconociendo la excelencia en la educación en psicología y fomentando el desarrollo profesional para estudiantes y profesores en todo el mundo.",
+    "applyForMembership": "Solicitar Membresía",
+    "learnMore": "Saber Más",
+    "stats": {
+      "activeMembers": "Miembros Activos",
+      "chaptersWorldwide": "Capítulos Mundiales",
+      "universities": "Universidades",
+      "countries": "Países"
+    },
+    "about": {
+      "title": "Acerca de Psi Alpha",
+      "heading": "Excelencia en Educación en Psicología",
+      "description": "Psi Alpha es la principal sociedad internacional de honor en psicología, dedicada a reconocer la excelencia académica y promover el avance de la ciencia psicológica.",
+      "features": {
+        "academicExcellence": {
+          "title": "Excelencia Académica",
+          "description": "Reconocer logros sobresalientes en estudios e investigación en psicología."
+        },
+        "professionalNetwork": {
+          "title": "Red Profesional",
+          "description": "Conectar con profesionales de psicología, investigadores y compañeros estudiantes."
+        },
+        "careerDevelopment": {
+          "title": "Desarrollo Profesional",
+          "description": "Acceder a recursos exclusivos, talleres y oportunidades de avance profesional."
+        },
+        "globalCommunity": {
+          "title": "Comunidad Global",
+          "description": "Unirse a una red mundial de miembros de la sociedad de honor en psicología."
+        }
+      }
+    },
+    "membership": {
+      "title": "Beneficios de Membresía",
+      "heading": "¿Por qué unirse a Psi Alpha?",
+      "description": "La membresía en Psi Alpha proporciona numerosos beneficios que apoyan tu viaje académico y profesional en psicología.",
+      "benefits": [
+        "Reconocimiento de logros académicos",
+        "Acceso a becas exclusivas",
+        "Oportunidades de networking profesional",
+        "Recursos de desarrollo profesional",
+        "Oportunidades de colaboración en investigación",
+        "Programas de desarrollo de liderazgo",
+        "Red de mentores alumni",
+        "Descuentos en conferencias y registro prioritario"
+      ],
+      "viewOptions": "Ver Opciones de Membresía"
+    },
+    "cta": {
+      "heading": "¿Listo para unirte?",
+      "subheading": "Comienza tu solicitud hoy.",
+      "description": "Da el primer paso para unirte a la principal sociedad de honor en psicología y desbloquea beneficios exclusivos.",
+      "applyNow": "Aplicar Ahora",
+      "memberPortal": "Portal de Miembros"
+    },
+    "footer": {
+      "description": "La Sociedad Internacional de Honor en Psicología, reconociendo la excelencia en educación en psicología y fomentando el desarrollo profesional en todo el mundo.",
+      "quickLinks": "Enlaces Rápidos",
+      "contact": "Contacto",
+      "email": "Email: info@psialpha.org",
+      "phone": "Teléfono: (555) 123-4567",
+      "address": "Dirección: 123 Psychology Ave",
+      "suite": "Suite 100, Academic City, AC 12345",
+      "copyright": "© 2024 Psi Alpha Sociedad Internacional de Honor en Psicología. Todos los derechos reservados."
+    }
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signInButton": "Iniciar Sesión",
+    "signUpButton": "Registrarse",
+    "authenticationRequired": "Autenticación Requerida",
+    "pleaseSignIn": "Por favor inicia sesión para acceder a esta página."
+  },
+  "payment": {
+    "title": "Elige tu Membresía",
+    "description": "Únete a la principal sociedad de honor en psicología y desbloquea beneficios exclusivos, oportunidades de networking y recursos de desarrollo profesional.",
+    "membershipTypes": {
+      "student": {
+        "name": "Membresía Estudiantil",
+        "description": "Perfecta para estudiantes actuales",
+        "features": [
+          "Acceso a todos los recursos de miembros",
+          "Eventos y reuniones del capítulo",
+          "Oportunidades de networking",
+          "Apoyo académico",
+          "Válida mientras esté inscrito"
+        ]
+      },
+      "annual": {
+        "name": "Membresía Anual",
+        "description": "Membresía renovable anualmente",
+        "features": [
+          "Todos los beneficios estudiantiles",
+          "Networking profesional",
+          "Recursos de desarrollo profesional",
+          "Acceso al directorio de alumni",
+          "Descuento en conferencia anual"
+        ]
+      },
+      "lifetime": {
+        "name": "Membresía de por Vida",
+        "description": "Pago único, acceso de por vida",
+        "features": [
+          "Todos los beneficios anuales",
+          "Acceso de por vida",
+          "No requiere renovación",
+          "Estatus de miembro legado",
+          "Reconocimiento especial",
+          "Mejor valor general"
+        ]
+      }
+    },
+    "mostPopular": "Más Popular",
+    "select": "Seleccionar",
+    "paymentInformation": {
+      "title": "Información de Pago",
+      "securePayments": {
+        "title": "Pagos Seguros",
+        "description": "Todos los pagos se procesan de forma segura a través de Stripe. Tu información de pago está encriptada y nunca se almacena en nuestros servidores."
+      },
+      "refundPolicy": {
+        "title": "Política de Reembolso",
+        "description": "Las cuotas de membresía no son reembolsables. Sin embargo, si experimentas algún problema, por favor contacta a nuestro equipo de soporte para asistencia."
+      },
+      "questions": {
+        "title": "¿Preguntas?",
+        "description": "Si tienes alguna pregunta sobre membresía o pagos, por favor contáctanos en support@psialpha.org"
+      },
+      "memberBenefits": {
+        "title": "Beneficios de Miembro",
+        "description": "Tu membresía incluye acceso a recursos exclusivos, eventos de networking y oportunidades de desarrollo profesional."
+      }
+    }
+  },
+  "portal": {
+    "title": "Portal de Miembros",
+    "welcome": "Bienvenido de vuelta",
+    "description": "Gestiona tu membresía y ve tu historial de pagos",
+    "membershipStatus": "Estado de Membresía",
+    "type": "Tipo",
+    "status": "Estado",
+    "startDate": "Fecha de Inicio",
+    "endDate": "Fecha de Fin",
+    "autoRenew": "Renovación Automática",
+    "enabled": "Habilitada",
+    "disabled": "Deshabilitada",
+    "renewMembership": "Renovar Membresía",
+    "quickActions": "Acciones Rápidas",
+    "makePayment": "Hacer un Pago",
+    "registerInduction": "Registrarse para Inducción",
+    "viewEvents": "Ver Eventos",
+    "paymentHistory": "Historial de Pagos",
+    "export": "Exportar",
+    "date": "Fecha",
+    "description": "Descripción",
+    "amount": "Cantidad",
+    "receipt": "Recibo",
+    "download": "Descargar",
+    "noPayments": "No se encontraron pagos",
+    "noPaymentsDescription": "Aún no has realizado ningún pago.",
+    "makeFirstPayment": "Hacer tu Primer Pago"
+  },
+  "admin": {
+    "dashboard": "Panel de Control",
+    "members": "Miembros",
+    "inductions": "Inducciones",
+    "chapters": "Capítulos",
+    "schools": "Escuelas",
+    "advisors": "Asesores",
+    "events": "Eventos",
+    "payments": "Pagos",
+    "reports": "Reportes",
+    "settings": "Configuración"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "pending": "Pendiente",
+    "approved": "Aprobado",
+    "rejected": "Rechazado",
+    "yes": "Sí",
+    "no": "No",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar",
+    "close": "Cerrar"
+  }
+}
+

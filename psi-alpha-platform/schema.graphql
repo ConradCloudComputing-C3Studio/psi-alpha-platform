@@ -1,0 +1,335 @@
+# AWS Amplify GraphQL Schema for Psi Alpha Platform
+
+# User model for authentication and basic profile
+type User @model @auth(rules: [
+  { allow: owner, operations: [read, update] },
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read] }
+]) {
+  id: ID!
+  email: String! @index(name: "byEmail", queryField: "userByEmail")
+  firstName: String!
+  lastName: String!
+  role: UserRole!
+  status: UserStatus!
+  profileImage: String
+  phone: String
+  address: AWSJSON
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  
+  # Relationships
+  member: Member @hasOne
+  advisorProfile: Advisor @hasOne
+  payments: [Payment] @hasMany
+  eventAttendees: [EventAttendee] @hasMany
+  inductionApplications: [InductionApplication] @hasMany
+  createdEvents: [Event] @hasMany(indexName: "byCreatedBy", fields: ["id"])
+  createdPosts: [NewsPost] @hasMany(indexName: "byCreatedBy", fields: ["id"])
+  createdPages: [Page] @hasMany(indexName: "byCreatedBy", fields: ["id"])
+}
+
+enum UserRole {
+  ADMIN
+  ADVISOR
+  MEMBER
+  PROSPECT
+  ALUMNI
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+}
+
+# Chapter model for organizational structure
+type Chapter @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read, update] },
+  { allow: groups, groups: ["member"], operations: [read] }
+]) {
+  id: ID!
+  name: String! @index(name: "byName", queryField: "chapterByName")
+  code: String! @index(name: "byCode", queryField: "chapterByCode")
+  school: School @belongsTo
+  location: String
+  establishedDate: AWSDate
+  status: ChapterStatus!
+  contactEmail: String
+  website: String
+  description: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  
+  # Relationships
+  advisors: [Advisor] @hasMany
+  members: [Member] @hasMany
+  inductions: [Induction] @hasMany
+}
+
+enum ChapterStatus {
+  ACTIVE
+  INACTIVE
+  CHARTER_PENDING
+  SUSPENDED
+}
+
+# School model for educational institutions
+type School @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read] },
+  { allow: groups, groups: ["member"], operations: [read] }
+]) {
+  id: ID!
+  name: String! @index(name: "byName", queryField: "schoolByName")
+  address: AWSJSON
+  website: String
+  type: SchoolType!
+  accreditation: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  
+  # Relationships
+  chapters: [Chapter] @hasMany
+}
+
+enum SchoolType {
+  UNIVERSITY
+  COLLEGE
+  COMMUNITY_COLLEGE
+  TECHNICAL_SCHOOL
+}
+
+# Advisor model for chapter advisors
+type Advisor @model @auth(rules: [
+  { allow: owner, operations: [read, update] },
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read] }
+]) {
+  id: ID!
+  user: User! @belongsTo
+  chapter: Chapter! @belongsTo
+  title: String
+  department: String
+  officeLocation: String
+  officeHours: String
+  bio: String
+  specialties: [String]
+  isActive: Boolean!
+  appointmentDate: AWSDate
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+# Member model for chapter members
+type Member @model @auth(rules: [
+  { allow: owner, operations: [read, update] },
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read, update] }
+]) {
+  id: ID!
+  user: User! @belongsTo
+  chapter: Chapter! @belongsTo
+  membershipType: MembershipType!
+  memberNumber: String @index(name: "byMemberNumber", queryField: "memberByNumber")
+  dues: Float!
+  paymentStatus: PaymentStatus!
+  inductionDate: AWSDate
+  alumniDate: AWSDate
+  emergencyContact: AWSJSON
+  medicalInfo: String
+  customFields: AWSJSON
+  isActive: Boolean!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum MembershipType {
+  ACTIVE
+  ASSOCIATE
+  HONORARY
+  ALUMNI
+}
+
+enum PaymentStatus {
+  CURRENT
+  OVERDUE
+  EXEMPT
+  SUSPENDED
+}
+
+# Induction model for tracking induction events
+type Induction @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [create, read, update] },
+  { allow: groups, groups: ["member"], operations: [read] }
+]) {
+  id: ID!
+  chapter: Chapter! @belongsTo
+  title: String!
+  description: String
+  inductionDate: AWSDate!
+  location: String
+  capacity: Int
+  registrationCode: String! @index(name: "byCode", queryField: "inductionByCode")
+  isActive: Boolean!
+  createdBy: String! @index(name: "byCreatedBy", queryField: "inductionsByCreator")
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  
+  # Relationships
+  applications: [InductionApplication] @hasMany
+}
+
+# Induction Application model
+type InductionApplication @model @auth(rules: [
+  { allow: owner, operations: [create, read, update] },
+  { allow: groups, groups: ["admin"], operations: [read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read, update] }
+]) {
+  id: ID!
+  user: User! @belongsTo
+  induction: Induction! @belongsTo
+  status: ApplicationStatus!
+  submittedAt: AWSDateTime
+  reviewedAt: AWSDateTime
+  reviewedBy: String
+  notes: String
+  personalInfo: AWSJSON!
+  academicInfo: AWSJSON
+  references: AWSJSON
+  documents: AWSJSON
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum ApplicationStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+}
+
+# Payment model for tracking dues and fees
+type Payment @model @auth(rules: [
+  { allow: owner, operations: [read] },
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read] }
+]) {
+  id: ID!
+  user: User! @belongsTo
+  amount: Float!
+  currency: String!
+  type: PaymentType!
+  status: PaymentStatus!
+  stripePaymentId: String
+  description: String
+  dueDate: AWSDate
+  paidAt: AWSDateTime
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum PaymentType {
+  DUES
+  FEES
+  DONATION
+  MERCHANDISE
+  EVENT
+}
+
+# Event model for chapter events
+type Event @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [create, read, update] },
+  { allow: groups, groups: ["member"], operations: [read] },
+  { allow: public, operations: [read] }
+]) {
+  id: ID!
+  title: String!
+  description: String!
+  date: AWSDateTime!
+  endDate: AWSDateTime
+  location: String!
+  capacity: Int
+  registrationRequired: Boolean!
+  registrationDeadline: AWSDateTime
+  price: Float
+  createdBy: String! @index(name: "byCreatedBy", queryField: "eventsByCreator")
+  isPublished: Boolean!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  
+  # Relationships
+  attendees: [EventAttendee] @hasMany
+}
+
+# Event Attendee model
+type EventAttendee @model @auth(rules: [
+  { allow: owner, operations: [create, read, update] },
+  { allow: groups, groups: ["admin"], operations: [read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read, update] }
+]) {
+  id: ID!
+  event: Event! @belongsTo
+  user: User! @belongsTo
+  registeredAt: AWSDateTime!
+  attended: Boolean
+  notes: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+# Page model for content management
+type Page @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read, update] },
+  { allow: public, operations: [read] }
+]) {
+  id: ID!
+  slug: String! @index(name: "bySlug", queryField: "pageBySlug")
+  title: String!
+  content: String!
+  metaDescription: String
+  published: Boolean!
+  createdBy: String! @index(name: "byCreatedBy", queryField: "pagesByCreator")
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+# News Post model
+type NewsPost @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [create, read, update] },
+  { allow: public, operations: [read] }
+]) {
+  id: ID!
+  title: String!
+  content: String!
+  excerpt: String
+  featuredImage: String
+  published: Boolean!
+  publishedAt: AWSDateTime
+  createdBy: String! @index(name: "byCreatedBy", queryField: "postsByCreator")
+  tags: [String]
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+# Configuration model for system settings
+type Configuration @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["advisor"], operations: [read] }
+]) {
+  id: ID!
+  key: String! @index(name: "byKey", queryField: "configByKey")
+  value: AWSJSON!
+  description: String
+  category: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+

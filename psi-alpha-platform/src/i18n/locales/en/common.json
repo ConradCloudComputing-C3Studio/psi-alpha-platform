@@ -1,0 +1,221 @@
+{
+  "navigation": {
+    "about": "About",
+    "membership": "Membership",
+    "chapters": "Chapters",
+    "resources": "Resources",
+    "events": "Events",
+    "signIn": "Sign In",
+    "joinNow": "Join Now"
+  },
+  "homepage": {
+    "title": "Psi Alpha",
+    "subtitle": "The International Psychology Honor Society",
+    "description": "Recognizing excellence in psychology education and fostering professional development for students and faculty worldwide.",
+    "applyForMembership": "Apply for Membership",
+    "learnMore": "Learn More",
+    "stats": {
+      "activeMembers": "Active Members",
+      "chaptersWorldwide": "Chapters Worldwide",
+      "universities": "Universities",
+      "countries": "Countries"
+    },
+    "about": {
+      "title": "About Psi Alpha",
+      "heading": "Excellence in Psychology Education",
+      "description": "Psi Alpha is the premier international honor society in psychology, dedicated to recognizing academic excellence and promoting the advancement of psychological science.",
+      "features": {
+        "academicExcellence": {
+          "title": "Academic Excellence",
+          "description": "Recognize outstanding achievement in psychology studies and research."
+        },
+        "professionalNetwork": {
+          "title": "Professional Network",
+          "description": "Connect with psychology professionals, researchers, and fellow students."
+        },
+        "careerDevelopment": {
+          "title": "Career Development",
+          "description": "Access exclusive resources, workshops, and career advancement opportunities."
+        },
+        "globalCommunity": {
+          "title": "Global Community",
+          "description": "Join a worldwide network of psychology honor society members."
+        }
+      }
+    },
+    "membership": {
+      "title": "Membership Benefits",
+      "heading": "Why Join Psi Alpha?",
+      "description": "Membership in Psi Alpha provides numerous benefits that support your academic and professional journey in psychology.",
+      "benefits": [
+        "Recognition of academic achievement",
+        "Access to exclusive scholarships",
+        "Professional networking opportunities",
+        "Career development resources",
+        "Research collaboration opportunities",
+        "Leadership development programs",
+        "Alumni mentorship network",
+        "Conference discounts and priority registration"
+      ],
+      "viewOptions": "View Membership Options"
+    },
+    "cta": {
+      "heading": "Ready to join?",
+      "subheading": "Start your application today.",
+      "description": "Take the first step towards joining the premier psychology honor society and unlock exclusive benefits.",
+      "applyNow": "Apply Now",
+      "memberPortal": "Member Portal"
+    },
+    "footer": {
+      "description": "The International Psychology Honor Society, recognizing excellence in psychology education and fostering professional development worldwide.",
+      "quickLinks": "Quick Links",
+      "contact": "Contact",
+      "email": "Email: info@psialpha.org",
+      "phone": "Phone: (555) 123-4567",
+      "address": "Address: 123 Psychology Ave",
+      "suite": "Suite 100, Academic City, AC 12345",
+      "copyright": "© 2024 Psi Alpha International Psychology Honor Society. All rights reserved."
+    }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInButton": "Sign In",
+    "signUpButton": "Sign Up",
+    "authenticationRequired": "Authentication Required",
+    "pleaseSignIn": "Please sign in to access this page."
+  },
+  "payment": {
+    "title": "Choose Your Membership",
+    "description": "Join the premier psychology honor society and unlock exclusive benefits, networking opportunities, and professional development resources.",
+    "membershipTypes": {
+      "student": {
+        "name": "Student Membership",
+        "description": "Perfect for current students",
+        "features": [
+          "Access to all member resources",
+          "Chapter events and meetings",
+          "Networking opportunities",
+          "Academic support",
+          "Valid while enrolled"
+        ]
+      },
+      "annual": {
+        "name": "Annual Membership",
+        "description": "Renewable yearly membership",
+        "features": [
+          "All student benefits",
+          "Professional networking",
+          "Career development resources",
+          "Alumni directory access",
+          "Annual conference discount"
+        ]
+      },
+      "lifetime": {
+        "name": "Lifetime Membership",
+        "description": "One-time payment, lifetime access",
+        "features": [
+          "All annual benefits",
+          "Lifetime access",
+          "No renewal required",
+          "Legacy member status",
+          "Special recognition",
+          "Best value overall"
+        ]
+      }
+    },
+    "mostPopular": "Most Popular",
+    "select": "Select",
+    "paymentInformation": {
+      "title": "Payment Information",
+      "securePayments": {
+        "title": "Secure Payments",
+        "description": "All payments are processed securely through Stripe. Your payment information is encrypted and never stored on our servers."
+      },
+      "refundPolicy": {
+        "title": "Refund Policy",
+        "description": "Membership fees are non-refundable. However, if you experience any issues, please contact our support team for assistance."
+      },
+      "questions": {
+        "title": "Questions?",
+        "description": "If you have any questions about membership or payments, please contact us at support@psialpha.org"
+      },
+      "memberBenefits": {
+        "title": "Member Benefits",
+        "description": "Your membership includes access to exclusive resources, networking events, and professional development opportunities."
+      }
+    }
+  },
+  "portal": {
+    "title": "Member Portal",
+    "welcome": "Welcome back",
+    "description": "Manage your membership and view your payment history",
+    "membershipStatus": "Membership Status",
+    "type": "Type",
+    "status": "Status",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "autoRenew": "Auto Renew",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "renewMembership": "Renew Membership",
+    "quickActions": "Quick Actions",
+    "makePayment": "Make a Payment",
+    "registerInduction": "Register for Induction",
+    "viewEvents": "View Events",
+    "paymentHistory": "Payment History",
+    "export": "Export",
+    "date": "Date",
+    "description": "Description",
+    "amount": "Amount",
+    "receipt": "Receipt",
+    "download": "Download",
+    "noPayments": "No payments found",
+    "noPaymentsDescription": "You haven't made any payments yet.",
+    "makeFirstPayment": "Make Your First Payment"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "members": "Members",
+    "inductions": "Inductions",
+    "chapters": "Chapters",
+    "schools": "Schools",
+    "advisors": "Advisors",
+    "events": "Events",
+    "payments": "Payments",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "yes": "Yes",
+    "no": "No",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "close": "Close"
+  }
+}
+
