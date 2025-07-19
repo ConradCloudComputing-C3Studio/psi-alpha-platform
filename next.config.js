@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Don’t export static HTML–let Next.js handle SSR
-  // (i.e. remove output: 'export')
+  // we want SSR, not a static export:
+  // output and trailingSlash left commented-out
+  // output: 'export',
+  // trailingSlash: true,
+
   images: {
-    // if you’re using next/image but want to skip the optimization step
+    // skip Next.js image optimization step if desired
     unoptimized: true,
   },
 
-  // Skip ESLint during CI/CD builds so you don’t get
-  // “Unexpected any” errors in production
   eslint: {
+    // don’t fail build on lint errors (e.g. no-explicit-any)
     ignoreDuringBuilds: true,
   },
 };
