@@ -1,4 +1,4 @@
-# Psi Alpha Platform
+## Psi Alpha Platform
 
 A comprehensive web platform for the International Psychology Honor Society, built with Next.js, TypeScript, and AWS Amplify.
 
