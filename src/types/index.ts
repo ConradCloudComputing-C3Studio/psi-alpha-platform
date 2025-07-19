@@ -13,7 +13,8 @@ export interface User {
   updatedAt: string
 }
 
-export type UserRole = 'admin' | 'member' | 'prospect' | 'alumni'
+export type UserRole = "admin" | "advisor" | "member" | "prospect" | "alumni"
+
 export type UserStatus = 'active' | 'inactive' | 'pending' | 'suspended'
 
 export interface Address {
