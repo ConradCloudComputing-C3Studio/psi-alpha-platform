@@ -10,7 +10,7 @@ import { z } from 'zod'
 import { generateId } from '@/lib/utils'
 
 const inductionSchema = z.object({
-  title: z.string().min(3, 'Title must be at least 3 characters'),
+  title: z.string( ).min(3, 'Title must be at least 3 characters'),
   description: z.string().min(10, 'Description must be at least 10 characters'),
   inductionDate: z.string().min(1, 'Induction date is required'),
   inductionTime: z.string().min(1, 'Induction time is required'),
@@ -20,7 +20,7 @@ const inductionSchema = z.object({
   registrationDeadline: z.string().optional(),
   requirements: z.string().optional(),
   contactEmail: z.string().email('Valid email is required').optional(),
-  isActive: z.boolean().default(true)
+  isActive: z.boolean().optional().default(true)
 })
 
 type InductionFormData = z.infer<typeof inductionSchema>
@@ -348,4 +348,3 @@ export default function NewInductionPage() {
     </ProtectedRoute>
   )
 }
-
